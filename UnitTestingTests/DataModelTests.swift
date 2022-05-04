@@ -44,6 +44,24 @@ class DataModelTests: XCTestCase {
         //then
         XCTAssert(volume == 100, "Highest volume should be equal 100")
     }
+    
+    func testNumberOneMustBeGreaterThanNumberTwo() {
+        let numberOne = 1
+        let numberTwo = 0
+        
+        let isGreater = sut.greaterThanValue(x: numberOne, y: numberTwo)
+        
+        XCTAssert(isGreater)
+    }
+    
+    func testNumberOneMustNotBeGreaterThanNumberTwo() {
+        let numberOne = 1
+        let numberTwo = 1
+        
+        let isGreater = sut.greaterThanValue(x: numberOne, y: numberTwo)
+        
+        XCTAssert(!isGreater)
+    }
 
     func testPerformanceExample() throws {
         measure {
